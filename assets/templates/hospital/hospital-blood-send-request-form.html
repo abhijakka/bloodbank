@@ -1,0 +1,317 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>CODEBOOK.in - Responsive Bootstrap Admin Panel</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+<!--       <link rel="icon" href="images/fevicon.png" type="image/png" />
+ -->      <!-- bootstrap css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/bootstrap.min.css' %}"/>
+      <!-- site css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/style.css' %}"/>
+      <!-- responsive css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/responsive.css' %}"/>
+      <!-- color css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/colors.css' %}"/>
+      <!-- select bootstrap -->
+       <link rel="stylesheet" href="{% static 'hospital/css/bootstrap-select.css' %}"/>
+      <!-- scrollbar css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/perfect-scrollbar.css' %}"/>
+      <!-- custom css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/custom.css' %}"/>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="{% url 'hospital_dashboard' %}">
+                         
+                        </a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'hospital/images/best-hospital-in-south-india.jpg' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Hospital</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="{% url 'hospital_dashboard' %}" >  <i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        
+
+                     <li><a href="{% url 'hospital_view_blood_stock' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Stock</span></a></li>
+
+                     
+                   
+ 
+                     <li>
+                        <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Blood Donors</span></a>
+                        <ul class="collapse list-unstyled" id="element1">
+                           <li><a href="{% url 'hospital_view_blood_donated_user_details' %}">> <span>All Our Blood Donor</span></a></li>
+                           <li><a href="{% url 'hospital_user_blood_donating_receive_request' %}">> <span>Donor Blood Donate requests</span></a></li>
+                           <li><a href="{% url 'hospital_user_blood_recpitant_receive_request' %}">> <span>Reciptant Blood  requests</span></a></li>
+                        </ul>
+                     </li>
+                     <!-- ----------- -->
+                     <li>
+                        <a href="#element2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-h-square blue1_color"></i> <span>Hospitals</span></a>
+                        <ul class="collapse list-unstyled" id="element2">
+                           <li><a href="{% url 'hospital_view_donatedblood_to_hospitals' %}">> <span>Blood Hospitals Details</span></a></li>
+                       <!--     <li><a href="hospital_reg_rqs.html">> <span>Hospital requests</span></a></li> -->
+                           <li><a href="{% url 'hospital_blood_receive_request_hospitals' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- --------- -->
+                     <li>
+                        <a href="#element3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-plus-square green_color"></i><span>Blood Banks</span></a>
+                        <ul class="collapse list-unstyled" id="element3">
+                           <li><a href="{% url 'hospital_view_bloodbanks_details' %}">> <span>Donated Blood Banks Details</span></a></li>
+<!--                            <li><a href="blood_bank_reg_rqs.html">> <span>Blood Banks requests</span></a></li>
+ -->                           <li><a href="{% url 'hospital_blood_receive_request_bloodbanks' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- ----------- -->
+
+                     <li>
+                        <a href="#element4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-medkit red_color"></i> <span>NGO's</span></a>
+                        <ul class="collapse list-unstyled" id="element4">
+                           <li><a href="{% url 'hospital_ngo_camp_condut_receive_request' %}">> <span>All NGO's conducts</span></a></li>
+<!--                            <li><a href="ngo_cdt.html">> <span>NGO's conduct Requests</span></a></li>
+ --><!--                          <li><a href="ngo_blood_rec.html">> <span>Blood recieved</span></a></li>
+ -->                        </ul>
+                     </li>
+
+
+                     <li><a href="{% url 'hospital_blood_send_request_hospitals' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Request</span></a></li> 
+                     
+                    
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section mt-2 ml-2">
+                           <a href="{% url 'hospital_dashboard' %}"><h1 style="color: white;"><span style="text-decoration: underline; color:#fa651b;">BLO</span>OD IN<span style="text-decoration: underline; color:#0ee70e;">DIA</span></h1></a>
+                        </div>
+                       <div class="right_topbar">
+                           <div class="icon_info">
+                             
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'hospital/images/best-hospital-in-south-india.jpg' %}" alt="#" /><span class="name_user">Hospitals</span></a>
+                                    <div class="dropdown-menu">
+                                        
+                                       <a class="dropdown-item" href="{% url 'home' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Blood Request</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- row -->
+                     <div class="row column1">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                           <div class="white_shd full margin_bottom_30">
+                              <div class="full graph_head" style="background-color: #15283c;">
+                                 <div class="heading1 margin_0">
+                                    <h2 style="color: #fff;" class="text-center">Blood Request Form</h2>
+                                 </div>
+                              </div>
+                              <form method="post" enctype="multipart/form-data"onsubmit = "return loginvalidation()"  name="myform">
+                                 {% csrf_token %}
+                              <div class="full price_table padding_infor_info">
+                                 {% for i in data %}
+                                 <div class="row">
+                                    <!-- user profile section --> 
+                                    <!-- profile image -->
+                                    <div class="col-lg-6">
+                                       
+                                       <div class="col-md-6"><label  style="font-size: 18px;color:black">Hospital Name</label></div>  <div class="col-md-6"><input class="text-center" type="text" name="hosp_name"  value='{{i.hospital_name}}' style="padding: 2px 0px;"></div><br>
+
+                                       <div class="col-md-6"><label  style="font-size: 18px; color:black"> Requried Blood Group</label></div><div class="col-md-6"><select style="padding: 4px 63px;" name ="hosp_blood_group_requried" ><option value='select'hidden>Select</option><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B-</option><option value="AB+">AB+</option><option value="AB-">AB-</option><option value="O+">O+</option><option value="O-">O-</option></select></div><br>
+                                         <div class="col-md-6"><input hidden class="text-center" type="text" name="hosp_email"  value='{{i.hpospital_email}}' style="padding: 2px 0px;"></div><br>
+
+
+                                    </div>   
+
+                                       <div class="col-lg-6">
+                                         
+
+                                         <!-- <div class="col-md-6"><label class="text-dark" style="font-size: 18px;">Contact Number</label></div><div class="col-md-6"><input class="text-center" type="tel" name="hosp_mobileno"  style="padding: 2px 0px;"></div><br>
+
+                                         <div class="col-md-6"><label class="text-dark" style="font-size: 18px;">Required ml</label></div> <div class="col-md-6"><select  name='hosp_blood_requried_ml'style="padding: 4px 54px;"></select><option hidden>Select</option><option value="100ml">100 ml's</option><option value="150ml">150 ml's</option><option value="200ml">200 ml's</option><option value="250ml">250 ml's</option><option value="300ml">300 ml's</option><option value="350ml">350 ml's</option><option value="400ml">400 ml's</option><option value="450ml">450 ml's</option></select></div><br> -->
+
+                                         <div class="col-md-6"><label style="font-size: 18px;color:black">Contact</label></div>  <div class="col-md-6"><input class="text-center" type="text" name="hosp_mobileno" value='{{i.hospital_mobilenumber}}'style="padding: 2px 0px;"></div><br>
+
+                                         <div class="col-md-6"><label  style="font-size: 18px;color:black"> Requried Blood Group ML</label></div><div class="col-md-6"><select style="padding: 4px 63px;" name ="hosp_blood_requried_ml" ><option value="select"hidden>Select</option><option value="100ml">100ml</option><option value="150ml">150ml</option><option value="200ml">200ml</option><option value="250ml">250ml</option><option value="300ml">300ml</option><option value="350ml">350ml</option><option value="400ml">400ml</option><option value="450ml">450ml</option></select></div><br><br><br>
+                                         <button type="submit" class="btn btn-outline-dark" style="font-size: 22px;margin-bottom: 10px;">Send Request</button>
+                                        
+                                       </div>
+                                       
+                                 </div>
+                                    {% endfor %}      
+                                          
+                                     
+
+                                       
+                                
+                              </div>
+                             
+                           </form>
+                           </div>
+                           <div class="col-md-1"></div>
+                        </div>
+                        <!-- end row -->
+                     </div>
+                     <!-- footer -->
+                     <div class="container-fluid">
+                       <!--  <div class="footer">
+                           <input type="active" name="" value="&#8377;  ,   /-" placeholder="&#8377;__,___/-">
+                        </div> -->
+                     </div>
+                  </div>
+                  <!-- end dashboard inner -->
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="{% static 'hospital/js/jquery.min.js' %}"></script>
+      <script src="{% static 'hospital/js/popper.min.js' %}"></script>
+      <script src="{% static 'hospital/js/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'hospital/js/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'hospital/js/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'hospital/js/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'hospital/js/Chart.min.js' %}"></script>
+      <script src="{% static 'hospital/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'hospital/js/utils.js' %}"></script>
+      <script src="{% static 'hospital/js/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'hospital/js/perfect-scrollbar.min.js' %}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'hospital/js/custom.js' %}"></script>
+      <!-- calendar file css -->    
+      <script src="{% static 'hospital/js/semantic.min.js' %}"></script>
+
+      <script type="text/javascript">
+         function loginvalidation(){
+             var NamE = document.myform.hosp_name
+             var BloodGroup = document.myform.hosp_blood_group_requried
+             var BloodGroupml = document.myform.hosp_blood_requried_ml
+            // var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+             var Mobilenumber = document.myform.hosp_mobileno
+             
+             if (NamE.value==""){
+                 alert("Please Enter Hospital Name");
+                 NamE.focus();
+                 return false;
+             }  
+             
+             
+             if (BloodGroup.value == 'select'){
+
+               alert("Please Select Requried BloodGroup: ");
+               BloodGroup.focus();
+       
+               return false;
+            }
+
+
+            if (BloodGroupml.value == 'select'){
+
+               alert("Please Select Requried Ml: ");
+               BloodGroupml.focus();
+       
+               return false;
+            }
+
+             if (Mobilenumber.value.length != 10) {
+
+               alert("please Enter valid mobile number");
+               
+               return false;
+               
+           }
+       
+           if (Mobilenumber.value == " ") {
+       
+               alert("Please Enter Mobile Number");
+       
+               return false;
+           }
+             return true;   
+         }
+     </script>
+     <script>
+
+      {% for m in messages %}
+    
+      swal({
+        
+        text: "{{m}}",
+        icon: "success",
+        button: "ok",
+      });
+        
+      {% endfor %}
+    
+   </script>
+   </body>
+</html>

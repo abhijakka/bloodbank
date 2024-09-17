@@ -1,0 +1,252 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>CODEBOOK.in - Responsive Bootstrap Admin Panel</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+<!--       <link rel="icon" href="images/fevicon.png" type="image/png" />
+ -->      <!-- bootstrap css -->
+ <link rel="stylesheet" href="{% static 'admin/css/bootstrap.min.css' %}" />
+ <!-- site css -->
+ <link rel="stylesheet" href="{% static 'admin/css/style.css' %}" />
+ <!-- responsive css -->
+ <link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}" />
+ <!-- color css -->
+ <link rel="stylesheet" href="{% static 'admin/css/colors.css' %}" />
+ <!-- select bootstrap -->
+ <link rel="stylesheet" href="{% static 'admin/css/bootstrap-select.css' %}" />
+ <!-- scrollbar css -->
+ <link rel="stylesheet" href="{% static 'admin/css/perfect-scrollbar.css' %}" />
+ <!-- custom css -->
+ <link rel="stylesheet" href="{% static 'admin/css/custom.css' %}" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="{% url 'admin_dashboard' %}">
+                         
+                        </a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'admin/images/layout_img/user_img.jpg' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Admin</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     
+                     
+                        <li class="active"><a href="{% url 'admin_dashboard' %}"> <i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a></li>
+                        
+                       
+                  
+                 
+
+                     <li><a href="{% url 'admin_view_bloodstock_details' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Stock</span></a></li>
+
+
+                     <li>
+                        <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Users</span></a>
+                        <ul class="collapse list-unstyled" id="element1">
+                           <li><a href="{% url 'admin_view_user_details' %}">> <span>All users details</span></a></li>
+                           <li><a href="{% url 'admin_user_registration_form_request' %}">> <span>User requests</span></a></li>
+                       
+                       </ul>
+                     </li>
+              
+                     <li>
+                        <a href="#element2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-h-square blue1_color"></i> <span>Hospitals</span></a>
+                        <ul class="collapse list-unstyled" id="element2">
+                           <li><a href="{% url 'admin_view_hospitals_details' %}">> <span>All Hospitals</span></a></li>
+                           <li><a href="{% url 'admin_hospital_registration_form_request' %}">> <span>Hospital requests</span></a></li>
+                       
+                       </ul>
+                     </li>
+                     
+                     <li>
+                        <a href="#element3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-plus-square green_color"></i><span>Blood Banks</span></a>
+                        <ul class="collapse list-unstyled" id="element3">
+                           <li><a href="{% url 'admin_view_bloodbanks_details' %}">> <span>All Blood Banks</span></a></li>
+                           <li><a href="{% url 'admin_bloodbank_registration_form_request' %}">> <span>Blood Banks requests</span></a></li>
+                        </ul> 
+                     </li>
+                  
+
+                     <li>
+                        <a href=" #element4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-medkit red_color"></i> <span>NGO's</span></a>
+                        <ul class="collapse list-unstyled" id="element4">
+
+                           <li><a href="{% url 'admin_ngo_recevice_request' %}">><span>NGO's Registration Requests</span></a></li>
+
+                      </ul>
+                     </li>
+
+
+                     
+                    
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section mt-2 ml-2">
+                           <a href="{% url 'admin_dashboard' %}"> <h1 style="color: white;"><span style="text-decoration: underline; color:#fa651b;">BLO</span>OD IN<span style="text-decoration: underline; color:#0ee70e;">DIA</span></h1></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+                             <!--  <ul>
+                                 <li><a href="notifications.html"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                              </ul> -->
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'admin/images/layout_img/user_img.jpg' %}" alt="#" /><span class="name_user">Admin</span></a>
+                                    <div class="dropdown-menu">
+                                      <!--  <a class="dropdown-item" href="profile.html">My Profile</a>
+                                       <a class="dropdown-item" href="settings.html">Settings</a>
+                                       <a class="dropdown-item" href="help.html">Help</a> -->
+                                       <a class="dropdown-item" href="{% url 'home' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2> User's Request </h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- --------------------- -->
+
+
+                  <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <table class="table table-hover table-striped justify-content-center">
+                           <thead class=" justify-content-center">
+                               <tr class="thead  text-white" style="font-weight: 500; background-color: #15283c;"> 
+                                
+                                 
+                                 <td> Name</td>
+                                 <td>Blood Group</td>                               
+                                 <td>DOB</td>
+                                 <td>Contact Number</td>
+                                 <td>Email</td>
+                                 <td>Status</td>
+                                 
+                                
+                                 <td class="pl-5 pr-5">request</td>                             
+                              </tr>                              
+                           </thead class="thead-dark justify-content-center">
+                           {% for i in data %}
+                           <tr>
+                              
+                              <td>{{i.user_name}}</td>
+                              <td>{{i.user_bloodgroup}}</td>
+                              <td>{{i.user_dateofbirth}}</td>
+                              <td>{{i.user_mobilenumber}}</td>
+                              <td>{{i.user_email}}</td>
+                              <td>{{i.user_status}}</td>
+                              
+                              
+                           
+                          
+                             
+                              <td><a href="/use_register_accept/{{i.user_id}}"><button class="btn btn-primary btn-lg" style="font-size: 10px; margin-right:8px">Accept</button></a><a href="/use_register_rejected/{{i.user_id}}"><button class="btn btn-danger btn-lg" style="font-size: 10px;">Reject</button></a></td>
+                           </tr>
+                           {% endfor %}
+                            
+                           <tbody>
+                              
+                           </tbody>
+                           
+                        </table>
+                        
+                     </div>
+                     
+                  </div>
+                  
+               </div>
+               
+                  <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer">
+                        
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="{% static 'admin/js/jquery.min.js' %}"></script>
+      <script src="{% static 'admin/js/popper.min.js' %}"></script>
+      <script src="{% static 'admin/js/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'admin/js/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'admin/js/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'admin/js/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'admin/js/Chart.min.js' %}"></script>
+      <script src="{% static 'admin/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'admin/js/utils.js' %}"></script>
+      <script src="{% static 'admin/js/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'admin/js/perfect-scrollbar.min.js' %}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'admin/js/custom.js' %}"></script>
+      <script src="{% static 'admin/js/chart_custom_style1.js' %}"></script>
+   </body>
+</html>

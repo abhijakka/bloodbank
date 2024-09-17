@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>CODEBOOK.in - Responsive Bootstrap Admin Panel</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+<!--       <link rel="icon" href="images/fevicon.png" type="image/png" />
+ -->      <!-- bootstrap css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/bootstrap.min.css' %}"/>
+      <!-- site css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/style.css' %}"/>
+      <!-- responsive css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/responsive.css' %}"/>
+      <!-- color css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/colors.css' %}"/>
+      <!-- select bootstrap -->
+       <link rel="stylesheet" href="{% static 'hospital/css/bootstrap-select.css' %}"/>
+      <!-- scrollbar css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/perfect-scrollbar.css' %}"/>
+      <!-- custom css -->
+       <link rel="stylesheet" href="{% static 'hospital/css/custom.css' %}"/>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="{% url 'hospital_dashboard' %}">
+                         
+                        </a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'hospital/images/best-hospital-in-south-india.jpg' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Hospital</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="{% url 'hospital_dashboard' %}" >  <i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        
+
+                     <li><a href="{% url 'hospital_view_blood_stock' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Stock</span></a></li>
+
+                     
+                   
+ 
+                     <li>
+                        <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Blood Donors</span></a>
+                        <ul class="collapse list-unstyled" id="element1">
+                           <li><a href="{% url 'hospital_view_blood_donated_user_details' %}">> <span>All Our Blood Donor</span></a></li>
+                           <li><a href="{% url 'hospital_user_blood_donating_receive_request' %}">> <span>Donor Blood Donate requests</span></a></li>
+                           <li><a href="{% url 'hospital_user_blood_recpitant_receive_request' %}">> <span>Reciptant Blood  requests</span></a></li>
+                        </ul>
+                     </li>
+                     <!-- ----------- -->
+                     <li>
+                        <a href="#element2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-h-square blue1_color"></i> <span>Hospitals</span></a>
+                        <ul class="collapse list-unstyled" id="element2">
+                           <li><a href="{% url 'hospital_view_bloodbanks_details' %}">> <span>Blood Hospitals Details</span></a></li>
+                       <!--     <li><a href="hospital_reg_rqs.html">> <span>Hospital requests</span></a></li> -->
+                           <li><a href="{% url 'hospital_blood_receive_request_hospitals' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- --------- -->
+                     <li>
+                        <a href="#element3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-plus-square green_color"></i><span>Blood Banks</span></a>
+                        <ul class="collapse list-unstyled" id="element3">
+                           <li><a href="{% url 'hospital_view_bloodbanks_details' %}">> <span>Donated Blood Banks Details</span></a></li>
+<!--                            <li><a href="blood_bank_reg_rqs.html">> <span>Blood Banks requests</span></a></li>
+ -->                           <li><a href="{% url 'hospital_blood_receive_request_bloodbanks' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- ----------- -->
+
+                     <li>
+                        <a href="#element4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-medkit red_color"></i> <span>NGO's</span></a>
+                        <ul class="collapse list-unstyled" id="element4">
+                           <li><a href="{% url 'hospital_ngo_camp_condut_receive_request' %}">> <span>All NGO's conducts</span></a></li>
+<!--                            <li><a href="ngo_cdt.html">> <span>NGO's conduct Requests</span></a></li>
+ --><!--                          <li><a href="ngo_blood_rec.html">> <span>Blood recieved</span></a></li>
+ -->                        </ul>
+                     </li>
+
+
+                     <li><a href="{% url 'hospital_blood_send_request_hospitals' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Request</span></a></li> 
+                     
+                    
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section mt-2 ml-2">
+                           <a href="{% url 'hospital_dashboard' %}"><h1 style="color: white;"><span style="text-decoration: underline; color:#fa651b;">BLO</span>OD IN<span style="text-decoration: underline; color:#0ee70e;">DIA</span></h1></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+                             
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'hospital/images/best-hospital-in-south-india.jpg' %}" alt="#" /><span class="name_user">Hospitals</span></a>
+                                    <div class="dropdown-menu">
+                                        
+                                       <a class="dropdown-item" href="{% url 'home' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Donor Blood Donate Requests</h2>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ----------------------- -->
+
+               <div class="container-fluid">
+                  
+                     <div class="row">
+                        <div class="col-md-12">
+                           <table class="table table-hover table-striped justify-content-center " >
+                              <thead class="text-center table-bordered">
+                                  <tr class="thead  text-white" style="font-weight: 500; background-color: #15283c;">                                 
+
+                                                                
+                                    <th>Donor Name</th>
+                                    <th>Blood Group</th>
+                                   
+                                    <th>Contact Number</th>
+                                    <th>Email Id</th>
+                                    <th>view Details</th>   
+                                    <th>Status</th>                                  
+                                    
+                                      <th colspan="2" class="pl-5 pr-5">request</th>        
+                                      
+                                    </tr>
+                              </thead>
+                              {% for i in data %}
+                              <tbody class="text-center table-bordered">
+                                 <tr>
+                                                                     
+                                    <td>{{i.user_profile_name}}</td>
+                                    <td>{{i.user_profile_bloodgroup}}</td>
+                                    
+                                    <td>{{i.user_profile_mobilenumber}}</td>
+                                    <td>{{i.user_profile_email}}</td>
+                                    {% if i.hospital_id == data2 %} 
+                                    
+                                    <td class="text-center"><a href="/hospital_view_donar_details_update_blood_details/{{ i.user_profile_id }}" type="submit" style="margin: 7px;" class="btn btn-info btn-sm">View</a> </td> 
+                                    
+                                    {% else %}
+                                    <td class="text-center"><a href="" type="submit" style="margin: 7px;" class="btn btn-info btn-sm">View</a> </td> 
+                                    
+                                    {% endif %}
+                                    
+                                    <td>{{i.status}}</td>  
+                                    
+                                    {% if m.hospital_id == data3  or  m.P_status == "Pending" or m.P_status == "Rejected"  %}
+                               
+                                    <td class="text-center"><a  href="/user_donate_accept/{{i.user_profile_id}}"><button  class="btn btn-primary btn-lg" style="font-size: 10px;margin-right:8px">Accept</button></a>
+                                      <a  href="/user_donate_rejected/{{i.user_profile_id}}"><button  class="btn btn-danger btn-lg" style="font-size: 10px;margin-right:8px">Reject</button></a>
+                                    
+                                   {% else %}
+                                   <td class="text-center"><a  href=""><button  class="btn btn-primary btn-lg" style="font-size: 10px;margin-right:8px">Accept</button></a>
+                                      <a  href=""><button  class="btn btn-danger btn-lg" style="font-size: 10px;margin-right:8px">Reject</button></a>
+                                    
+                                            
+                                   {% endif %}
+
+
+
+                                   
+
+
+
+
+                                 </tr>
+                                 {% endfor %}
+                                 
+                                
+                                 
+
+                                
+                                  
+                              </tbody>
+                              
+                           </table>
+                           
+                        </div>
+                        
+                   
+                     
+                  </div>
+                  
+               </div>
+
+               
+                  <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer">
+                        
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+       <script src="{% static 'hospital/js/jquery.min.js' %}"></script>
+      <script src="{% static 'hospital/js/popper.min.js' %}"></script>
+      <script src="{% static 'hospital/js/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'hospital/js/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'hospital/js/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'hospital/js/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'hospital/js/Chart.min.js' %}"></script>
+      <script src="{% static 'hospital/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'hospital/js/utils.js' %}"></script>
+      <script src="{% static 'hospital/js/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'hospital/js/perfect-scrollbar.min.js' %}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'hospital/js/custom.js' %}"></script>
+      <script src="{% static 'hospital/js/chart_custom_style1.js' %}"></script>
+   </body>
+</html>

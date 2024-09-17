@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>CODEBOOK.in - Responsive Bootstrap BloodBank Panel</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+<!--       <link rel="icon" href="images/fevicon.png" type="image/png" />
+ -->      <!-- bootstrap css -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/bootstrap.min.css' %}"/>
+      <!-- site css -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/style.css' %}"/>
+      <!-- responsive css -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/responsive.css' %}"/>
+      <!-- color css -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/colors.css' %}"/>
+      <!-- select bootstrap -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/bootstrap-select.css' %}"/>
+      <!-- scrollbar css -->
+       <link rel="stylesheet" href="{% static 'bloodbank/css/perfect-scrollbar.css' %}"/>
+      <!-- custom css -->
+         <link rel="stylesheet" href="{% static 'bloodbank/css/custom.css' %}" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a href="{% url 'bloodbank_dashboard' %}">
+                         
+                        </a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="{% static 'bloodbank/images/project-proposal-presentationblood-bank-management-system-1-320.webp' %}" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>Blood Bank</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="{%  url  'bloodbank_dashboard'  %}" >  <i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        
+
+                     <li><a href="{% url 'bloodbank_view_bloodstock' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Stock</span></a></li>
+
+                     
+ 
+                     <li>
+                        <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Blood Donors</span></a>
+                        <ul class="collapse list-unstyled" id="element1">
+                           <li><a href="{% url 'bloodbank_view_blood_donar_details' %}">> <span>All Our Blood Donor</span></a></li>
+                           <li><a href="{% url 'bloodbank_user_blood_donating_receivce_requset' %}">> <span>Donor Blood Donate requests</span></a></li>
+                           <li><a href="{% url 'bloodbank_user_bloodrequesting_receive_request' %}">> <span>Donor Blood requests</span></a></li>
+                        </ul>
+                     </li>
+                     <!-- ----------- -->
+                     <li>
+                        <a href="#element2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-h-square blue1_color"></i> <span>Hospitals</span></a>
+                        <ul class="collapse list-unstyled" id="element2">
+                           <li><a href="{% url 'bloodbank_view_blood_donated_hospitals' %}">> <span>All Hospitals</span></a></li>
+                       <!--     <li><a href="hospital_reg_rqs.html">> <span>Hospital requests</span></a></li> -->
+                           <li><a href="{% url 'bloodbank_blood_receive_request_hospitals' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- --------- -->
+                    <li>
+                        <a href="#element3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-plus-square green_color"></i><span>Blood Banks</span></a>
+                        <ul class="collapse list-unstyled" id="element3">
+                           <li><a href="{% url 'bloodbank_accepted_view_details' %}">> <span> Bloodbank blood details</span></a></li>
+<!--                            <li><a href="blood_bank_reg_rqs.html">> <span>Blood Banks requests</span></a></li>
+ -->                           <li><a href="{% url 'bloodbank_blood_request_receive_from_bloodbanks' %}">> <span>Blood Requests</span></a></li>
+<!--                            <li><a href="invoice.html">> <span>Invoice</span></a></li>
+ -->                        </ul>
+                     </li>
+                     <!-- ----------- -->
+
+                     <li>
+                        <a href="#element4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-medkit red_color"></i> <span>NGO's</span></a>
+                        <ul class="collapse list-unstyled" id="element4">
+                           <li><a href="{% url 'bloodbank_ngo_conduct_camp_recevie_request' %}">> <span>All NGO's conducts</span></a></li>
+<!--                            <li><a href="ngo_cdt.html">> <span>NGO's conduct Requests</span></a></li>
+ --><!--                            <li><a href="ngo_blood_rec.html">> <span>Blood recieved</span></a></li>
+ -->                        </ul>
+                     </li>
+
+
+                      <li><a href="{% url 'bloodbank_blood_send_request' %}"><i class="fa fa-table purple_color2"></i> <span>Blood Request</span></a></li> 
+                     
+                    
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section mt-2 ml-2">
+                           <a href="{% url 'bloodbank_dashboard' %}"> <h1 style="color: white;"><span style="text-decoration: underline; color:#fa651b;">BLO</span>OD IN<span style="text-decoration: underline; color:#0ee70e;">DIA</span></h1></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+                             
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'bloodbank/images/project-proposal-presentationblood-bank-management-system-1-320.webp' %}" alt="#" /><span class="name_user">Blood Bank</span></a>
+                                    <div class="dropdown-menu">
+                                       
+                                       <a class="dropdown-item" href="{% url 'home' %}"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Home</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row column1">
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-user yellow_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">{{donars}}</p>
+                                    <p class="head_couter">Blood Doners</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-h-square blue1_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">{{hospitals}}</p>
+                                    <p class="head_couter">Blood Hospitals Request</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-plus-square green_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">{{bloodbank}}</p>
+                                    <p class="head_couter">Blood Banks Request</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-clone yellow_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no ">
+                                 <div class="">
+                                    <p class="total_no ">{{users}}</p>
+                                    <p class="head_couter "></p>
+                                    <p class="head_couter">Blood Recipter Requests</p>
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row column1 social_media_section">
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full socile_icons fb margin_bottom_30" style="box-shadow: 0px 0px 11px 0px #3b5998;">
+                              <div class="social_icon">
+                                 <i class="fa fa-tint" style="font-size:48px;color:red"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>{{apos}} Bags</strong></span>
+                                       <span>A+</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>{{aneg}} Bags</strong></span>
+                                       <span>A-</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full socile_icons tw margin_bottom_30" style="box-shadow: 0px 0px 11px 0px #00aced;">
+                              <div class="social_icon">
+                                 <i class="fa fa-tint" style="font-size:48px;color:red"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>{{bpos}}Bags</strong></span>
+                                       <span>B+</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>{{bneg}}Bags</strong></span>
+                                       <span>B-</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full socile_icons linked margin_bottom_30" style="box-shadow: 0px 0px 11px 0px #0077b5;">
+                              <div class="social_icon">
+                                 <i class="fa fa-tint" style="font-size:48px;color:red"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>{{abpos}}Bags</strong></span>
+                                       <span>AB+</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>{{abneg}}Bags</strong></span>
+                                       <span>AB-</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full socile_icons google_p margin_bottom_30" style="box-shadow: 0px 0px 11px 0px #36d373;">
+                              <div class="social_icon">
+                                 <i class="fa fa-tint" style="font-size:48px;color:red"></i>
+                              </div>
+                              <div class="social_cont">
+                                 <ul>
+                                    <li>
+                                       <span><strong>{{opos}}Bags</strong></span>
+                                       <span>O+</span>
+                                    </li>
+                                    <li>
+                                       <span><strong>{{oneg}}Bags</strong></span>
+                                       <span>O-</span>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- graph -->
+                    
+                  <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer">
+                        <!-- <p>Copyright © 2018 Designed by html.design. All rights reserved.<br><br>
+                           Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+                        </p> -->
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+       <script src="{% static 'hospital/js/jquery.min.js' %}"></script>
+      <script src="{% static 'hospital/js/popper.min.js' %}"></script>
+      <script src="{% static 'hospital/js/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'hospital/js/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'hospital/js/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'hospital/js/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'hospital/js/Chart.min.js' %}"></script>
+      <script src="{% static 'hospital/js/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'hospital/js/utils.js' %}"></script>
+      <script src="{% static 'hospital/js/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'hospital/js/perfect-scrollbar.min.js' %}"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'hospital/js/custom.js' %}"></script>
+      <script src="{% static 'hospital/js/chart_custom_style1.js' %}"></script>
+   </body>
+</html>
